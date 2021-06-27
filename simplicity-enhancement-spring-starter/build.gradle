@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.5.2'
+}
+
+group 'cn.xiaoyu.framework'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+dependencies {
+    // 模块依赖
+    implementation(project(":simplicity-enhancement-base"))
+
+    // 自动配置
+    implementation group: 'org.springframework.boot', name: 'spring-boot-autoconfigure'
+    // 在编译时会自动收集配置类的条件，写入META-INF/spring-autoconfigure-metadata.properties
+    implementation group: 'org.springframework.boot', name: 'spring-boot-configuration-processor'
+    // Web依赖
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+}
+
+test {
+    useJUnitPlatform()
+}

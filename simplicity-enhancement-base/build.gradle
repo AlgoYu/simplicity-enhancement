@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group 'cn.xiaoyu.framework'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Lombok
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+}
+
+test {
+    useJUnitPlatform()
+}
