@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.5.2'
+}
+
+group 'cn.xiaoyu.framework'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+dependencies {
+    implementation(project(":simplicity-enhancement-spring-starter"))
+
+    // Web依赖
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+}
+
+test {
+    useJUnitPlatform()
+}

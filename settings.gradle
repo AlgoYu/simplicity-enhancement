@@ -1,4 +1,5 @@
 rootProject.name = 'Simplicity-Enhancement'
 include 'simplicity-enhancement-spring-starter'
 include 'simplicity-enhancement-base'
+include 'simplicity-enhancement-example'
 

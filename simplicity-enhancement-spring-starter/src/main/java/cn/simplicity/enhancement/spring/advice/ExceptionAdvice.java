@@ -28,10 +28,9 @@ public class ExceptionAdvice {
      **/
     @ExceptionHandler(value = Exception.class)
     public Object exceptionHandler(HttpServletRequest req, Exception e) {
-
         if (e instanceof ConditionException) {
-            ConditionException exception = (ConditionException) e;
-            return new BaseResponse<>(exception.getCode(), exception.getMsg(), null);
+            ConditionException conditionException = (ConditionException) e;
+            return new BaseResponse<>(conditionException.getCode(), conditionException.getMessage());
         }
         return BaseResponse.FAIL;
     }

@@ -1,10 +1,6 @@
 package cn.simplicity.enhancement.base.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import javax.lang.model.type.NullType;
 
 /**
  * @ClassName: HttpResponse
@@ -13,8 +9,6 @@ import javax.lang.model.type.NullType;
  * @Datetime 2021/5/30 9:30 下午
  */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class BaseResponse<T> {
     // 成功代码
     private String code;
@@ -23,12 +17,22 @@ public class BaseResponse<T> {
     // 数据
     private T data;
 
+    public BaseResponse(String code, String msg) {
+        this(code, msg, null);
+    }
+
+    public BaseResponse(String code, String msg, T data) {
+        this.code = code;
+        this.msg = msg;
+        this.data = data;
+    }
+
     // 成功
-    public static final BaseResponse<NullType> SUCCESS = new BaseResponse<>("SUCCESS", null, null);
+    public static final BaseResponse<Object> SUCCESS = new BaseResponse<>("SUCCESS", null);
     // 失败
-    public static final BaseResponse<NullType> FAIL = new BaseResponse<>("FAIL", null, null);
+    public static final BaseResponse<Object> FAIL = new BaseResponse<>("FAIL", null);
     // 服务器忙
-    public static final BaseResponse<NullType> SERVER_BUSY = new BaseResponse<>("FAIL", null, null);
+    public static final BaseResponse<Object> SERVER_BUSY = new BaseResponse<>("FAIL", null);
 
     /**
      * @Author XiaoYu
@@ -49,7 +53,7 @@ public class BaseResponse<T> {
      * @Return cn.algorithm.www.model.BaseResponse<java.lang.Object>
      **/
     public static BaseResponse<Object> success(Object object) {
-        return new BaseResponse<>("SUCCESS", null, object);
+        return new BaseResponse<Object>("SUCCESS", null, object);
     }
 
     /**
@@ -60,6 +64,6 @@ public class BaseResponse<T> {
      * @Return cn.algorithm.www.model.BaseResponse<java.lang.Object>
      **/
     public static BaseResponse<Object> fail(String msg) {
-        return new BaseResponse<>("FAIL", msg, null);
+        return new BaseResponse<Object>("FAIL", msg);
     }
 }
