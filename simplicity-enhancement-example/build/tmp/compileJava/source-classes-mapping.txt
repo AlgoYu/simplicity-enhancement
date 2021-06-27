@@ -1,4 +1,6 @@
 simplicity/enhancement/example/ExampleApplication.java
  simplicity.enhancement.example.ExampleApplication
+simplicity/enhancement/example/model/Test.java
+ simplicity.enhancement.example.model.Test
 simplicity/enhancement/example/controller/ExampleController.java
  simplicity.enhancement.example.controller.ExampleController

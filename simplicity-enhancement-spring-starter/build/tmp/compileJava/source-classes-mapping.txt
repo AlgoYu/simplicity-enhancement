@@ -1,8 +1,10 @@
-cn/simplicity/enhancement/spring/annotation/EnableEnhancement.java
- cn.simplicity.enhancement.spring.annotation.EnableEnhancement
-cn/simplicity/enhancement/spring/advice/ResponseAdvice.java
- cn.simplicity.enhancement.spring.advice.ResponseAdvice
 cn/simplicity/enhancement/spring/annotation/API.java
  cn.simplicity.enhancement.spring.annotation.API
 cn/simplicity/enhancement/spring/advice/ExceptionAdvice.java
  cn.simplicity.enhancement.spring.advice.ExceptionAdvice
+cn/simplicity/enhancement/spring/annotation/EnableEnhancement.java
+ cn.simplicity.enhancement.spring.annotation.EnableEnhancement
+cn/simplicity/enhancement/spring/advice/ResponseAdvice.java
+ cn.simplicity.enhancement.spring.advice.ResponseAdvice
+cn/simplicity/enhancement/spring/autoconfig/SimplicityEnhancementAutoConfig.java
+ cn.simplicity.enhancement.spring.autoconfig.SimplicityEnhancementAutoConfig

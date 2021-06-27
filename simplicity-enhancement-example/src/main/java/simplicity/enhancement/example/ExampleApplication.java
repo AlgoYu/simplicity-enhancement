@@ -1,7 +1,9 @@
 package simplicity.enhancement.example;
 
+import cn.simplicity.enhancement.spring.annotation.EnableEnhancement;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * @Author XiaoYu
@@ -10,8 +12,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Email 794763733@qq.com
  */
 @SpringBootApplication
+@EnableEnhancement
 public class ExampleApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ExampleApplication.class, args);
+        ConfigurableApplicationContext run = SpringApplication.run(ExampleApplication.class, args);
+        Object exceptionAdvice = run.getBean("exceptionAdvice");
+        System.out.println(exceptionAdvice);
     }
 }

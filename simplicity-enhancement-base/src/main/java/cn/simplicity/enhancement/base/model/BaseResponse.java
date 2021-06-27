@@ -53,7 +53,7 @@ public class BaseResponse<T> {
      * @Return cn.algorithm.www.model.BaseResponse<java.lang.Object>
      **/
     public static BaseResponse<Object> success(Object object) {
-        return new BaseResponse<Object>("SUCCESS", null, object);
+        return new BaseResponse<>("SUCCESS", null, object);
     }
 
     /**
@@ -64,6 +64,6 @@ public class BaseResponse<T> {
      * @Return cn.algorithm.www.model.BaseResponse<java.lang.Object>
      **/
     public static BaseResponse<Object> fail(String msg) {
-        return new BaseResponse<Object>("FAIL", msg);
+        return new BaseResponse<>("FAIL", msg);
     }
 }

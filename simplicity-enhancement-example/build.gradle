@@ -13,7 +13,7 @@ repositories {
 apply plugin: 'io.spring.dependency-management'
 
 dependencies {
-    implementation(project(":simplicity-enhancement-spring-starter"))
+    compile(project(":simplicity-enhancement-spring-starter"))
 
     // Web依赖
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'

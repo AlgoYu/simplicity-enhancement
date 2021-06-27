@@ -1,8 +1,8 @@
 cn/simplicity/enhancement/base/model/PageResponse.java
  cn.simplicity.enhancement.base.model.PageResponse
-cn/simplicity/enhancement/base/model/BaseResponse.java
- cn.simplicity.enhancement.base.model.BaseResponse
-cn/simplicity/enhancement/base/util/Assert.java
- cn.simplicity.enhancement.base.util.Assert
 cn/simplicity/enhancement/base/model/ConditionException.java
  cn.simplicity.enhancement.base.model.ConditionException
+cn/simplicity/enhancement/base/util/Assert.java
+ cn.simplicity.enhancement.base.util.Assert
+cn/simplicity/enhancement/base/model/BaseResponse.java
+ cn.simplicity.enhancement.base.model.BaseResponse

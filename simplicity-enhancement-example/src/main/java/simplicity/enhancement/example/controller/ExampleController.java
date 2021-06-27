@@ -4,6 +4,7 @@ import cn.simplicity.enhancement.spring.annotation.API;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import simplicity.enhancement.example.model.Test;
 
 /**
  * @Author XiaoYu
@@ -16,14 +17,15 @@ public class ExampleController {
 
     @API
     @GetMapping(value = "/testExample1")
-    public String testExample1(@RequestParam(value = "str") String str) {
-        return str;
+    public Test testExample1(@RequestParam(value = "str") String str) {
+        Test test = new Test();
+        test.setAge(1);
+        test.setName("xiaoyu");
+        return test;
     }
 
-    @API
     @GetMapping(value = "/testExample")
     public String testExample2(@RequestParam(value = "str") String str) {
-
         return str;
     }
 }

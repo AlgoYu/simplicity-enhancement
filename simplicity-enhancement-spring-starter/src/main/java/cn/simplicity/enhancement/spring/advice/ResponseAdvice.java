@@ -5,6 +5,7 @@ import cn.simplicity.enhancement.spring.annotation.API;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.annotation.AnnotatedElementUtils;
+import org.springframework.core.io.Resource;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.server.ServerHttpRequest;
@@ -47,10 +48,11 @@ public class ResponseAdvice implements ResponseBodyAdvice<Object> {
      **/
     @Override
     public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType, Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
-        // 防止重复包裹
-        if (body instanceof BaseResponse) {
+        // 防止重复包裹或资源文件
+        if (body instanceof BaseResponse || body instanceof Resource) {
             return body;
         }
+        // 若无包裹则实现
         return BaseResponse.success(body);
     }
 }
